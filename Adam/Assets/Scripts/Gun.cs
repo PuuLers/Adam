@@ -1,28 +1,51 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
 
-public class Gun : MonoBehaviour
+public class Gun : Adam
 {
 
     public GameObject Bullet;
-    private Vector3 mousePosition;
     public float moveSpeed = 2f;
-
-    void Update()
+    public Transform shootPoint;
+    public float betweenTime;
+    private float _zero = 0;
+    
+    private void Follow()
     {
-        Shoot();
-        Vector3 diference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        float rotateZ = Mathf.Atan2(diference.y, diference.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, 0f, rotateZ);
+        Adam adam = new Adam();
+        transform.rotation = Quaternion.Euler(0f, 0f, adam.CursorPosition());
+        Debug.Log(adam.CursorPosition());
+    }
+    private void Flip()
+    {
+        Adam adam = new Adam();
+        Vector3 LocalScale = Vector3.one;
+        if (adam.CursorPosition() < 90 && adam.CursorPosition() > 180)
+        {
+            LocalScale.x = LocalScale.x * 1f;
+        }
+        else
+        {
+            LocalScale.x = LocalScale.x * -1f;
+        }
+        transform.localScale = LocalScale;
     }
 
+    private void FixedUpdate()
+    {
+        Shoot();
+        Follow();
+        //Flip();
+    }
     private void Shoot()
     {
-        if (Input.GetMouseButtonDown(0))
+        _zero += 0.1f;
+        if (Input.GetMouseButton(0) && _zero > betweenTime)
         {
-            Instantiate(Bullet, transform.position, transform.rotation);
+                Instantiate(Bullet, shootPoint.position, transform.rotation);
+                _zero = 0;  
         }
-
     }
 }

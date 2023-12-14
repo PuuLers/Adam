@@ -20,36 +20,61 @@ public class Adam : MonoBehaviour
         GetComponent();
     }
 
+    public float CursorPosition()
+    {
+        Vector3 diference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        float rotateZ = Mathf.Atan2(diference.y, diference.x) * Mathf.Rad2Deg;
+        return rotateZ;
+    }
+
+    private void Flip()
+    {
+        Vector3 LocalScale = Vector3.one;
+        if (CursorPosition() < 90 && CursorPosition() > -90)
+        {
+            LocalScale.x = LocalScale.x * 1f;
+        }
+        else
+        {
+            LocalScale.x = LocalScale.x * -1f;
+        }
+        transform.localScale = LocalScale;
+    }
+
     private void Move(float speed)
     {
         _direction.x = Input.GetAxisRaw("Horizontal");
         _direction.y = Input.GetAxisRaw("Vertical");
         _rb.MovePosition(_rb.position + _direction * speed * Time.fixedDeltaTime);
-
+    }
+    private void Mirrored()
+    {
         if (transform.position.x <= -10f)
         {
             transform.position = new Vector2(9.99f, transform.position.y);
         }
-
         if (transform.position.x >= 10f)
         {
             transform.position = new Vector2(-9.99f, transform.position.y);
         }
-
         if (transform.position.y <= -5f)
         {
             transform.position = new Vector2(transform.position.x, 4.99f);
         }
-
         if (transform.position.y >= 5f)
         {
             transform.position = new Vector2(transform.position.x, -4.99f);
         }
     }
 
+
+
     void FixedUpdate()
     {
-        Move(Speed);       
+        Move(Speed);
+        Mirrored();
+        CursorPosition();
+        Flip();
     }
 
     private void Update()
