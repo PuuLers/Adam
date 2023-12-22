@@ -9,25 +9,60 @@ public class Enemy : MonoBehaviour
     [SerializeField] private int _healthPoint;
     [SerializeField] private int _damage;
     [SerializeField] private float _speed;
-    public Transform player;
+    private GameObject _player;
+    protected bool _die = false;
 
-
-    private void Update()
+    private void Awake()
     {
-        Hunt();
+        _player = GameObject.Find("Adam");
     }
-    private void Hunt()
+    protected void HuntFollow()
     {
-        transform.position = Vector3.MoveTowards(transform.position, player.position, _speed * Time.fixedDeltaTime);
-        Vector3 LocalScale = Vector3.one;
-        if (transform.position.x > player.position.x)
+        Vector3 offset = new Vector3(0, -0.6f, 0);
+        if (_die == false)
         {
-            LocalScale.x = LocalScale.x * -1;
+            transform.position = Vector3.MoveTowards(transform.position, _player.transform.position + offset, _speed * Time.fixedDeltaTime);
+            Vector3 LocalScale = Vector3.one;
+            if (transform.position.x > _player.transform.position.x)
+            {
+                LocalScale.x = LocalScale.x * -1;
+            }
+            else
+            {
+                LocalScale.x = LocalScale.x * 1;
+            }
+            transform.localScale = LocalScale;
         }
-        else
+    }
+
+    protected void CheckHealthPoint()
+    {
+        if (_healthPoint <= 0)
         {
-            LocalScale.x = LocalScale.x * 1;
+            Die();
         }
-        transform.localScale = LocalScale;
+    }
+    protected void Damage()
+    {
+        _healthPoint -= Gun._damage;
+        CheckHealthPoint();
+    }
+
+    protected void Die()
+    {
+        _die = true;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Bullet") && Bulllet.destroyed == false)
+        {
+            Damage();
+            collision.gameObject.SetActive(false);
+        }
+        else if (collision.CompareTag("Bullet"))
+        {
+            Damage();
+        }
     }
 }

@@ -1,34 +1,60 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Build;
 using UnityEditorInternal;
 using UnityEngine;
 
-public class Gun : Adam
+public class Gun : MonoBehaviour
 {
-
     public GameObject Bullet;
     public float moveSpeed = 2f;
     public Transform shootPoint;
     public float betweenTime;
     private float _zero = 0;
-    
-    private void Follow()
+    static public int _damage = 40;
+    private Animator _animator;
+
+    private void GetComponent()
     {
-        Adam adam = new Adam();
-        transform.rotation = Quaternion.Euler(0f, 0f, adam.CursorPosition());
-        Debug.Log(adam.CursorPosition());
+        _animator = GetComponent<Animator>();
     }
-    private void Flip()
+
+    private void Start()
     {
-        Adam adam = new Adam();
-        Vector3 LocalScale = Vector3.one;
-        if (adam.CursorPosition() < 90 && adam.CursorPosition() > 180)
+        GetComponent();
+    }
+
+
+    private void Animate(int id)
+    {
+        if (id == 0)
         {
-            LocalScale.x = LocalScale.x * 1f;
+            _animator.SetBool("Shoot", false);
+        }
+        else if (id == 1)
+        {
+            _animator.SetBool("Shoot", true);
+        }
+    }
+
+    private float Follow()
+    {
+        Vector3 diference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        float rotateZ = Mathf.Atan2(diference.y, diference.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, rotateZ);
+        return rotateZ;
+    }
+
+    private void FlipGun()
+    {
+        Vector3 LocalScale = Vector3.one;
+        if (Follow() < 90 && Follow() > -90)
+        {
+            LocalScale.y = LocalScale.y * 1f;
         }
         else
         {
-            LocalScale.x = LocalScale.x * -1f;
+            LocalScale.y = LocalScale.y * -1f;
         }
         transform.localScale = LocalScale;
     }
@@ -37,15 +63,20 @@ public class Gun : Adam
     {
         Shoot();
         Follow();
-        //Flip();
+        FlipGun();
     }
     private void Shoot()
     {
         _zero += 0.1f;
         if (Input.GetMouseButton(0) && _zero > betweenTime)
         {
-                Instantiate(Bullet, shootPoint.position, transform.rotation);
-                _zero = 0;  
+            Instantiate(Bullet, shootPoint.position, transform.rotation);
+            Animate(1);
+            _zero = 0;
+        }
+        else
+        {
+            Animate(0);
         }
     }
 }

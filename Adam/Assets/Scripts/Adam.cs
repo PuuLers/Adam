@@ -8,16 +8,22 @@ public class Adam : MonoBehaviour
     public float Speed;
     private Vector2 _direction;
     private Rigidbody2D _rb;
-
-
+    private Animator _animator;
+    public GameObject hand;
+    public Transform handPoint;
     private void GetComponent()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
     }
 
     void Start()
     {
         GetComponent();
+    }
+    private void Hand()
+    {
+        hand.transform.position = handPoint.position;
     }
 
     public float CursorPosition()
@@ -26,19 +32,16 @@ public class Adam : MonoBehaviour
         float rotateZ = Mathf.Atan2(diference.y, diference.x) * Mathf.Rad2Deg;
         return rotateZ;
     }
-
-    private void Flip()
+    private void Animate()
     {
-        Vector3 LocalScale = Vector3.one;
-        if (CursorPosition() < 90 && CursorPosition() > -90)
+        if (_direction.x != 0 || _direction.y != 0)
         {
-            LocalScale.x = LocalScale.x * 1f;
+            _animator.SetBool("Move", true);
         }
         else
         {
-            LocalScale.x = LocalScale.x * -1f;
+            _animator.SetBool("Move", false);
         }
-        transform.localScale = LocalScale;
     }
 
     private void Move(float speed)
@@ -74,7 +77,8 @@ public class Adam : MonoBehaviour
         Move(Speed);
         Mirrored();
         CursorPosition();
-        Flip();
+        Hand();
+        Animate();
     }
 
     private void Update()

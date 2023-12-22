@@ -7,7 +7,7 @@ public class Bulllet : MonoBehaviour
     public float timeDestroy = 3f;
     public float speed = 3f;
     public Rigidbody2D rb;
-
+    static public bool destroyed = false;
     void Start()
     {
         Invoke("DestroyBullet", timeDestroy);
