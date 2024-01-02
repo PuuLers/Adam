@@ -186,8 +186,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4344b4982e6d97b4680bdbc1be2e1903, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  helthPoint: 100
-  helthPointBar: {fileID: 7919563287258353576}
+  healthPoint: 100
+  healthPointBar: {fileID: 7919563287258353576}
   fieldSize: 30
   Speed: 10
   hand: {fileID: 3067229014368875971}
@@ -917,8 +917,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 809d1f9cda0fbf14bb603fa6e90618fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  helthPoint: 0
-  helthPointBar: {fileID: 0}
+  healthPoint: 0
+  healthPointBar: {fileID: 0}
   fieldSize: 0
   Speed: 0
   hand: {fileID: 0}

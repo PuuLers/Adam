@@ -1,3 +1,4 @@
+using Microsoft.Win32.SafeHandles;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -6,8 +7,6 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public GameObject helthPointBar;
-
-
     [SerializeField] protected int _healthPoint;
     [SerializeField] protected int _damage;
     [SerializeField] protected float _speed;
@@ -79,8 +78,18 @@ public class Enemy : MonoBehaviour
     }
 
 
+    private void AdamDamage()
+    {
+        Adam.healthPoint -= _damage;
+    }
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("Player"))
+        {
+            AdamDamage();
+        }
         if (collision.CompareTag("Bullet") && Bulllet.destroyed == false)
         {
             Damage();

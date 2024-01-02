@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class Adam : MonoBehaviour
 {
-    public float helthPoint;
-    public GameObject helthPointBar;
+    static public float healthPoint = 100;
+    public GameObject healthPointBar;
     public float fieldSize;
     public float Speed;
     private Vector2 _direction;
@@ -23,8 +23,8 @@ public class Adam : MonoBehaviour
 
     private void Bar()
     {
-        float hp = helthPoint / 100f;
-        helthPointBar.transform.localScale = new Vector3(hp, 0.1f, 1);
+        float hp = healthPoint / 100f;
+        healthPointBar.transform.localScale = new Vector3(hp, 0.1f, 1);
     }
 
 
