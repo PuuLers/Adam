@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -5,6 +6,9 @@ using UnityEngine;
 
 public class Adam : MonoBehaviour
 {
+    public float helthPoint;
+    public GameObject helthPointBar;
+    public float fieldSize;
     public float Speed;
     private Vector2 _direction;
     private Rigidbody2D _rb;
@@ -16,6 +20,14 @@ public class Adam : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
     }
+
+    private void Bar()
+    {
+        float hp = helthPoint / 100f;
+        helthPointBar.transform.localScale = new Vector3(hp, 0.1f, 1);
+    }
+
+
 
     void Start()
     {
@@ -50,23 +62,23 @@ public class Adam : MonoBehaviour
         _direction.y = Input.GetAxisRaw("Vertical");
         _rb.MovePosition(_rb.position + _direction * speed * Time.fixedDeltaTime);
     }
-    private void Mirrored()
+    private void Mirrored(float offset)
     {
-        if (transform.position.x <= -10f)
+        if (transform.position.x <= -fieldSize)
         {
-            transform.position = new Vector2(9.99f, transform.position.y);
+            transform.position = new Vector3(fieldSize - 0.01f, transform.position.y, offset);
         }
-        if (transform.position.x >= 10f)
+        if (transform.position.x >= fieldSize)
         {
-            transform.position = new Vector2(-9.99f, transform.position.y);
+            transform.position = new Vector3(-fieldSize + 0.01f, transform.position.y, offset);
         }
-        if (transform.position.y <= -5f)
+        if (transform.position.y <= -fieldSize)
         {
-            transform.position = new Vector2(transform.position.x, 4.99f);
+            transform.position = new Vector3(transform.position.x, fieldSize - 0.01f, offset);
         }
-        if (transform.position.y >= 5f)
+        if (transform.position.y >= fieldSize)
         {
-            transform.position = new Vector2(transform.position.x, -4.99f);
+            transform.position = new Vector3(transform.position.x, -fieldSize + 0.01f , offset);
         }
     }
 
@@ -75,29 +87,11 @@ public class Adam : MonoBehaviour
     void FixedUpdate()
     {
         Move(Speed);
-        Mirrored();
+        Mirrored(-4f);
         CursorPosition();
         Hand();
         Animate();
+        Bar();
     }
 
-    private void Update()
-    {
-       
-    }
-
-
-    //public void flip(bool fliped, float parametr)
-    //{
-    //    Vector3 LocalScale = Vector3.one;
-    //    if (fliped == false && LocalScale.x <= 1)
-    //    {
-    //        LocalScale.x = LocalScale.x + parametr;
-    //    }
-    //    else if (fliped == true && LocalScale.x >= -1)
-    //    {
-    //        LocalScale.x = LocalScale.x - parametr;
-    //    }
-    //    transform.localScale = LocalScale;
-    //}
 }

@@ -5,41 +5,71 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public GameObject helthPointBar;
 
-    [SerializeField] private int _healthPoint;
-    [SerializeField] private int _damage;
-    [SerializeField] private float _speed;
-    private GameObject _player;
+
+    [SerializeField] protected int _healthPoint;
+    [SerializeField] protected int _damage;
+    [SerializeField] protected float _speed;
+    protected GameObject _player;
     protected bool _die = false;
+
+    private void Bar()
+    {
+        float hp = _healthPoint / 100f;
+        helthPointBar.transform.localScale = new Vector3(hp, 0.1f, 1);
+    }
 
     private void Awake()
     {
         _player = GameObject.Find("Adam");
+
     }
+
+    private Vector3 GetPlayerPosition()
+    {
+        Transform player = _player.transform;
+        return player.position;
+    }
+    private void Update()
+    {
+        CheckHealthPoint();
+        Bar();
+    }
+
     protected void HuntFollow()
     {
+
         Vector3 offset = new Vector3(0, -0.6f, 0);
-        if (_die == false)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, _player.transform.position + offset, _speed * Time.fixedDeltaTime);
-            Vector3 LocalScale = Vector3.one;
-            if (transform.position.x > _player.transform.position.x)
-            {
-                LocalScale.x = LocalScale.x * -1;
-            }
-            else
-            {
-                LocalScale.x = LocalScale.x * 1;
-            }
-            transform.localScale = LocalScale;
-        }
+        transform.position = Vector3.MoveTowards(transform.position, GetPlayerPosition(), _speed * Time.fixedDeltaTime);
     }
+
+
+    private void flip()
+    {
+        Vector3 LocalScale = Vector3.one;
+        if (transform.position.x > _player.transform.position.x)
+        {
+            LocalScale.x = LocalScale.x * -1;
+        }
+        else
+        {
+            LocalScale.x = LocalScale.x * 1;
+        }
+        transform.localScale = LocalScale;
+    }
+
 
     protected void CheckHealthPoint()
     {
         if (_healthPoint <= 0)
         {
-            Die();
+            _die = true;
+            _healthPoint = 0;
+        }
+        else
+        {
+            flip();
         }
     }
     protected void Damage()
@@ -48,10 +78,6 @@ public class Enemy : MonoBehaviour
         CheckHealthPoint();
     }
 
-    protected void Die()
-    {
-        _die = true;
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8936733733013977204
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8936733733013977206}
+  - component: {fileID: 8936733733013977207}
+  m_Layer: 0
+  m_Name: Generator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8936733733013977206
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8936733733013977204}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8936733733013977207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8936733733013977204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817e2c2765f01ef4380519e3a125a60a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SizeTrees: 20
+  SizeGross: 40
+  zero: {fileID: 8936733733013977206}
+  Gross:
+  - {fileID: 8477018897616426993, guid: ec58b776306747a49a68e5bbcc8c5d37, type: 3}
+  - {fileID: 2772224813280113418, guid: 40dc0cdad983acd4888659e3efd9887c, type: 3}
+  - {fileID: 284916827489880242, guid: 1f0810411324bfa44bdc4659783bc2ba, type: 3}
+  Trees:
+  - {fileID: 2977694535252392997, guid: c493678681cba9943bc28662ab6d82b7, type: 3}
+  - {fileID: 2984423554764266958, guid: bf0a80efb9ecde041987c7fdbf6f782c, type: 3}
+  - {fileID: 6198420374521964201, guid: 449bce0c1f17daf4581842426a98b88b, type: 3}
+  - {fileID: 5414882615165016494, guid: f9a1233807e4e24418979cb7c9d6381b, type: 3}
+  - {fileID: 1075808366469657027, guid: ba2ed7f4a1996884288bab3f5189b2e0, type: 3}
+  - {fileID: 1059452165247824981, guid: 2c42e0604497bd64db5e28b016137c67, type: 3}
+  - {fileID: 664443049867803616, guid: e09341d151a03b443b96039972d8021a, type: 3}
+  - {fileID: 8527667447478702089, guid: 89048e84ea839be40ae072483bf32fa5, type: 3}
+  - {fileID: 1612595226213587053, guid: b5b619cf326c42d4e8e2560ac8157c14, type: 3}
+  "Trees\u0421ount": 20
+  "Gross\u0421ount": 1000

@@ -1283,7 +1283,7 @@ TextureImporter:
         width: 174
         height: 161
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1291,6 +1291,69 @@ TextureImporter:
       bones: []
       spriteID: 4183ecbcaca868a4e9e04f5255ea1dc2
       internalID: -1515115619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SSH_55
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 355
+        width: 593
+        height: 483
+      alignment: 9
+      pivot: {x: 0.5126735, y: 0.060434345}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bf33de9ca7741240bf4f05cc0dbf4cb
+      internalID: 1573140832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SSH_57
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 7
+        width: 398
+        height: 335
+      alignment: 9
+      pivot: {x: 0.50944144, y: 0.07936182}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2205c1c16a2d7ce4b800d109c3403785
+      internalID: 1264852743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SSH_58
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 40
+        width: 295
+        height: 253
+      alignment: 9
+      pivot: {x: 0.58916575, y: 0.09898048}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c245347af709b3418882338b79f3a28
+      internalID: -1542411679
       vertices: []
       indices: 
       edges: []
@@ -1357,6 +1420,10 @@ TextureImporter:
       SSH_52: 941415881
       SSH_53: -1084706702
       SSH_54: -1515115619
+      SSH_55: 1573140832
+      SSH_56: 1245661369
+      SSH_57: 1264852743
+      SSH_58: -1542411679
       SSH_6: 1376647470
       SSH_7: 1983804244
       SSH_8: 1151195520
