@@ -273,7 +273,7 @@ GameObject:
   - component: {fileID: 4929319409507805162}
   - component: {fileID: 7400835754931284539}
   m_Layer: 0
-  m_Name: Beaver
+  m_Name: Fox
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

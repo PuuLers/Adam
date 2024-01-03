@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Beaver : Enemy
+public class Hedgehog : Enemy
 {
     private Animator _animator;
+
     private void Start()
     {
         _animator = GetComponent<Animator>();
-        _animator.SetBool("Die", false);
+        //_animator.SetBool("Die", false);
     }
 
     void FixedUpdate()
@@ -23,7 +24,7 @@ public class Beaver : Enemy
         {
             _speed = 0;
             _damage = 0;
-            _animator.SetBool("Die", true);
+            //_animator.SetBool("Die", true);
         }
     }
 }

@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public float fieldSize = 30;
     public GameObject helthPointBar;
     [SerializeField] protected int _healthPoint;
     [SerializeField] protected int _damage;
@@ -34,12 +35,11 @@ public class Enemy : MonoBehaviour
     {
         CheckHealthPoint();
         Bar();
+       
     }
 
     protected void HuntFollow()
     {
-
-        Vector3 offset = new Vector3(0, -0.6f, 0);
         transform.position = Vector3.MoveTowards(transform.position, GetPlayerPosition(), _speed * Time.fixedDeltaTime);
     }
 
@@ -100,4 +100,5 @@ public class Enemy : MonoBehaviour
             Damage();
         }
     }
+
 }

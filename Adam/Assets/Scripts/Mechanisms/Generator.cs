@@ -30,4 +30,7 @@ public class Generator : MonoBehaviour
         Generate(Trees, SizeTrees, TreesÑount);
     }
 
+
+
+
 }
