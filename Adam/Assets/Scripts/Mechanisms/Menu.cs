@@ -8,9 +8,12 @@ public class Menu : MonoBehaviour
     public GameObject preferencesPanel;
     public GameObject menuPanel;
     private bool _activePrefPanel = false;
-  
+    static public bool redWater = true;
 
-
+    public void SwitchBlood()
+    {
+        redWater = !redWater;
+    }
 
 
 

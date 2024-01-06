@@ -44,9 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 817e2c2765f01ef4380519e3a125a60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Stage: 1
   SizeTrees: 20
   SizeGross: 40
   zero: {fileID: 8936733733013977206}
+  Enemy: []
   Gross:
   - {fileID: 8477018897616426993, guid: ec58b776306747a49a68e5bbcc8c5d37, type: 3}
   - {fileID: 2772224813280113418, guid: 40dc0cdad983acd4888659e3efd9887c, type: 3}

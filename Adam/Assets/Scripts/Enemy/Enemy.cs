@@ -13,6 +13,19 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected float _speed;
     protected GameObject _player;
     protected bool _die = false;
+    public GameObject[] blood;
+    public float bloodOffset;
+
+    private void bleeding(GameObject[] obj)
+    {
+        if(Menu.redWater)
+        {
+            var cell = Instantiate(obj[Random.Range(0, obj.Length)]);
+            cell.transform.position = new Vector3(transform.position.x, transform.position.y - bloodOffset, 7);
+        }
+    }
+
+
 
     private void Bar()
     {
@@ -29,7 +42,8 @@ public class Enemy : MonoBehaviour
     private Vector3 GetPlayerPosition()
     {
         Transform player = _player.transform;
-        return player.position;
+        Vector3 pos = new Vector3(player.position.x, player.position.y + -0.925f, player.position.z);
+        return pos;
     }
     private void Update()
     {
@@ -75,6 +89,7 @@ public class Enemy : MonoBehaviour
     {
         _healthPoint -= Gun._damage;
         CheckHealthPoint();
+        bleeding(blood);
     }
 
 

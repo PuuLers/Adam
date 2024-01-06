@@ -8,7 +8,7 @@ public class Beaver : Enemy
     private void Start()
     {
         _animator = GetComponent<Animator>();
-        //_animator.SetBool("Die", false);
+        _animator.SetBool("Die", false);
     }
 
     void FixedUpdate()
@@ -23,7 +23,7 @@ public class Beaver : Enemy
         {
             _speed = 0;
             _damage = 0;
-            //_animator.SetBool("Die", true);
+            _animator.SetBool("Die", true);
         }
     }
 }
