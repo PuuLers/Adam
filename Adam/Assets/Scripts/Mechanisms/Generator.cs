@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Generator : MonoBehaviour
 {
+    public int Stage = 1;
     public int SizeTrees;
     public int SizeGross;
     public Transform zero;
+    public GameObject[] Enemy;
     public GameObject[] Gross;
     public GameObject[] Trees;
     public int Trees—ount;
@@ -22,6 +24,13 @@ public class Generator : MonoBehaviour
             cell.transform.position = new Vector3(Random.Range(-size, size), Random.Range(-size, size), transform.position.z);
         }
     }
+
+    private void Enemy—alculate()
+    {
+        Stage *= 3;
+    }
+
+
 
 
     void Start()

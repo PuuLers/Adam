@@ -377,8 +377,8 @@ TextureImporter:
         serializedVersion: 2
         x: 708
         y: 1677
-        width: 387
-        height: 216
+        width: 370
+        height: 214
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -480,10 +480,10 @@ TextureImporter:
       name: SSH_16
       rect:
         serializedVersion: 2
-        x: 1033
-        y: 1464
-        width: 90
-        height: 25
+        x: 1017
+        y: 1448
+        width: 26
+        height: 31
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -501,12 +501,12 @@ TextureImporter:
       name: SSH_17
       rect:
         serializedVersion: 2
-        x: 818
-        y: 1386
-        width: 192
-        height: 122
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 814
+        y: 1402
+        width: 176
+        height: 91
+      alignment: 9
+      pivot: {x: 0.085290045, y: 0.3721991}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -523,7 +523,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 818
-        y: 1348
+        y: 1346
         width: 45
         height: 21
       alignment: 0
@@ -543,10 +543,10 @@ TextureImporter:
       name: SSH_19
       rect:
         serializedVersion: 2
-        x: 845
+        x: 846
         y: 1316
-        width: 37
-        height: 24
+        width: 36
+        height: 23
       alignment: 9
       pivot: {x: 0.21972491, y: 0.24582417}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -564,10 +564,10 @@ TextureImporter:
       name: SSH_20
       rect:
         serializedVersion: 2
-        x: 809
+        x: 810
         y: 1316
         width: 36
-        height: 25
+        height: 24
       alignment: 9
       pivot: {x: 0.23735724, y: 0.24379395}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1354,6 +1354,27 @@ TextureImporter:
       bones: []
       spriteID: 9c245347af709b3418882338b79f3a28
       internalID: -1542411679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SSH_56
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 1692
+        width: 16
+        height: 72
+      alignment: 9
+      pivot: {x: 0.06500244, y: 0.81469893}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0a70b92f20c19e488c9d03139f2ba24
+      internalID: 1245661369
       vertices: []
       indices: 
       edges: []
