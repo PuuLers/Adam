@@ -94,11 +94,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1883827314352116087}
   - component: {fileID: 1486581609622842059}
-  - component: {fileID: 8823389593451621416}
   - component: {fileID: 1800585049503141589}
   - component: {fileID: 4340937162190212288}
   - component: {fileID: 6511091256630201852}
   - component: {fileID: 7400835754931284539}
+  - component: {fileID: 9118402066598524272}
   m_Layer: 0
   m_Name: Hog
   m_TagString: Enemy
@@ -140,23 +140,13 @@ MonoBehaviour:
   _healthPoint: 100
   _damage: 10
   _speed: 5
---- !u!114 &8823389593451621416
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3531075734649977500}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 702d5f620dd15214fb09c2e3b351a09b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fieldSize: 30
-  helthPointBar: {fileID: 1610865249408569904}
-  _healthPoint: 100
-  _damage: 10
-  _speed: 5
+  blood:
+  - {fileID: 15277546705210954, guid: e1d4070d1fa92834aacb06915b7ce530, type: 3}
+  - {fileID: 9155299358518086824, guid: 737217b1fb7e36747879df9ab8b8aed2, type: 3}
+  - {fileID: 7620869644873098099, guid: 9c0f3a2dbd93467499ccfba5c2e7cd95, type: 3}
+  - {fileID: 3890327804005204481, guid: 2dc04083c5bed494c8ac8d732736a057, type: 3}
+  - {fileID: 5074294444128646708, guid: fb21bdc1dcab24b478aa3a78ab78e90c, type: 3}
+  bloodOffset: 0.35
 --- !u!114 &1800585049503141589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,6 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01e06791914f51c45b7b9cc433f0ba7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: -4.5
 --- !u!50 &4340937162190212288
 Rigidbody2D:
   serializedVersion: 4
@@ -222,6 +213,27 @@ CircleCollider2D:
   m_Offset: {x: -0.11120701, y: -0.10338229}
   serializedVersion: 2
   m_Radius: 0.6435515
+--- !u!95 &9118402066598524272
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3531075734649977500}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2429981e512fa8f48868f9cb0b494389, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5617417962884326353
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,7 +427,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6675010911917540236}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.014, y: 0.042, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

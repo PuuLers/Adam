@@ -1152,10 +1152,10 @@ TextureImporter:
       name: SSH_48
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1301
-        width: 511
-        height: 272
+        x: 110
+        y: 1306
+        width: 393
+        height: 267
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1379,6 +1379,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: SSH_59
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1419
+        width: 191
+        height: 157
+      alignment: 9
+      pivot: {x: 0.91752166, y: 0.4913525}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 684b4fa1a7b858d46beee56ddbd22408
+      internalID: 954008279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1445,6 +1466,7 @@ TextureImporter:
       SSH_56: 1245661369
       SSH_57: 1264852743
       SSH_58: -1542411679
+      SSH_59: 888140003
       SSH_6: 1376647470
       SSH_7: 1983804244
       SSH_8: 1151195520
