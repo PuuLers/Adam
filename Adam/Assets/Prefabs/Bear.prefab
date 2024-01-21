@@ -334,7 +334,12 @@ MonoBehaviour:
   _healthPoint: 100
   _damage: 10
   _speed: 2
-  blood: []
+  blood:
+  - {fileID: 15277546705210954, guid: e1d4070d1fa92834aacb06915b7ce530, type: 3}
+  - {fileID: 9155299358518086824, guid: 737217b1fb7e36747879df9ab8b8aed2, type: 3}
+  - {fileID: 7620869644873098099, guid: 9c0f3a2dbd93467499ccfba5c2e7cd95, type: 3}
+  - {fileID: 5074294444128646708, guid: fb21bdc1dcab24b478aa3a78ab78e90c, type: 3}
+  - {fileID: 3890327804005204481, guid: 2dc04083c5bed494c8ac8d732736a057, type: 3}
   bloodOffset: 0
 --- !u!114 &1800585049503141589
 MonoBehaviour:
